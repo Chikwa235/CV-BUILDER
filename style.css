@@ -37,3 +37,7 @@ button {
   cursor: pointer;
   transition: background 0.2s;
 }
+
+button:hover {
+  background-color: #0056b3;
+}
