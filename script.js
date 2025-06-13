@@ -23,3 +23,18 @@ function addExperience() {
   `;
   document.getElementById('experience-list').appendChild(expDiv);
 }
+
+function addEducation() {
+  const eduDiv = document.createElement('div');
+  eduDiv.className = 'education';
+  eduDiv.innerHTML = `
+    <input type="text" placeholder="Degree" class="edu-degree" />
+    <input type="text" placeholder="School" class="edu-school" />
+    <textarea placeholder="Details" class="edu-details"></textarea>
+  `;
+  document.getElementById('education-list').appendChild(eduDiv);
+}
+
+function toggleDarkMode() {
+  document.body.classList.toggle('dark');
+}
