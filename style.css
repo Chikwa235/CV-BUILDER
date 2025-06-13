@@ -10,3 +10,9 @@ body.dark {
   background: #1c1c1c;
   color: #eee;
 }
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+}
