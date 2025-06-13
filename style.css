@@ -5,3 +5,8 @@ body {
   color: #333;
   transition: background 0.3s, color 0.3s;
 }
+
+body.dark {
+  background: #1c1c1c;
+  color: #eee;
+}
