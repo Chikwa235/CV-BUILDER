@@ -114,3 +114,6 @@ function generateCV(e) {
   preview.appendChild(eduSection);
 }
 
+document.getElementById('cv-form').addEventListener('submit', generateCV);
+
+
