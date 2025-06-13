@@ -55,3 +55,21 @@ function loadData() {
   if (!data) return;
   document.querySelectorAll('.skill').forEach((e, i) => e.value = data['skill[]']?.[i] || '');
 }
+
+function loadSample() {
+  document.getElementById('name').value = 'Chisapa Handsome Marley';
+  document.getElementById('email').value = 'chisapa@example.com';
+  document.getElementById('role').value = 'Frontend Developer';
+  document.querySelector('.skill').value = 'HTML';
+  addSkill();
+  document.querySelectorAll('.skill')[1].value = 'CSS';
+  addSkill();
+  document.querySelectorAll('.skill')[2].value = 'JavaScript';
+  document.querySelector('.exp-title').value = 'Intern Developer';
+  document.querySelector('.exp-company').value = 'CodeLab Africa';
+  document.querySelector('.exp-desc').value = 'Built interactive UI components.';
+  document.querySelector('.edu-degree').value = 'Diploma in CS';
+  document.querySelector('.edu-school').value = 'Zambia Tech Institute';
+  document.querySelector('.edu-details').value = 'Focused on frontend development.';
+}
+
