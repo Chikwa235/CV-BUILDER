@@ -73,3 +73,44 @@ function loadSample() {
   document.querySelector('.edu-details').value = 'Focused on frontend development.';
 }
 
+function generateCV(e) {
+  e.preventDefault();
+
+  const preview = document.getElementById('cv-preview');
+  preview.innerHTML = '';
+
+  const name = createElement('h1', document.getElementById('name').value);
+  const email = createElement('p', document.getElementById('email').value);
+  const role = createElement('h2', document.getElementById('role').value);
+
+  preview.append(name, role, email);
+
+  const skills = Array.from(document.querySelectorAll('.skill')).map(s => s.value);
+  const skillsSection = createElement('section');
+  skillsSection.append(createElement('h2', 'Skills'));
+  const ul = createElement('ul');
+  skills.forEach(skill => ul.append(createElement('li', skill)));
+  skillsSection.appendChild(ul);
+  preview.appendChild(skillsSection);
+
+  const expSection = createElement('section');
+  expSection.append(createElement('h2', 'Experience'));
+  document.querySelectorAll('.experience').forEach(exp => {
+    const title = createElement('h3', exp.querySelector('.exp-title').value);
+    const company = createElement('p', exp.querySelector('.exp-company').value);
+    const desc = createElement('p', exp.querySelector('.exp-desc').value);
+    expSection.append(title, company, desc);
+  });
+  preview.appendChild(expSection);
+
+  const eduSection = createElement('section');
+  eduSection.append(createElement('h2', 'Education'));
+  document.querySelectorAll('.education').forEach(edu => {
+    const degree = createElement('h3', edu.querySelector('.edu-degree').value);
+    const school = createElement('p', edu.querySelector('.edu-school').value);
+    const details = createElement('p', edu.querySelector('.edu-details').value);
+    eduSection.append(degree, school, details);
+  });
+  preview.appendChild(eduSection);
+}
+
