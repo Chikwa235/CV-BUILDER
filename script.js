@@ -49,3 +49,9 @@ function saveData() {
   localStorage.setItem('cv-data', JSON.stringify(data));
   alert('Data saved locally!');
 }
+
+function loadData() {
+  const data = JSON.parse(localStorage.getItem('cv-data'));
+  if (!data) return;
+  document.querySelectorAll('.skill').forEach((e, i) => e.value = data['skill[]']?.[i] || '');
+}
