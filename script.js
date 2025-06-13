@@ -38,3 +38,14 @@ function addEducation() {
 function toggleDarkMode() {
   document.body.classList.toggle('dark');
 }
+
+function saveData() {
+  const formData = new FormData(document.getElementById('cv-form'));
+  const data = {};
+  for (let [key, val] of formData.entries()) {
+    if (!data[key]) data[key] = [];
+    data[key].push(val);
+  }
+  localStorage.setItem('cv-data', JSON.stringify(data));
+  alert('Data saved locally!');
+}
