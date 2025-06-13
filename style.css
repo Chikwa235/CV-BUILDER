@@ -60,3 +60,12 @@ button:hover {
   border-bottom: 1px solid #ccc;
   padding-bottom: 0.3rem;
 }
+
+@media print {
+  body, .container, form, .controls {
+    display: none;
+  }
+  #cv-preview {
+    display: block;
+  }
+}
